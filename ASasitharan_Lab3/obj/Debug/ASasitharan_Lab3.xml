@@ -1,0 +1,54 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ASasitharan_Lab3
+</name>
+</assembly>
+<members>
+<member name="T:ASasitharan_Lab3.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:ASasitharan_Lab3.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:ASasitharan_Lab3.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:ASasitharan_Lab3.frmAverageUnitsShipped.Button4_Click(System.Object,System.EventArgs)">
+ <summary>
+ The exit button closes the application when clicked
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:ASasitharan_Lab3.frmAverageUnitsShipped.frmAverageUnitsShipped_Load(System.Object,System.EventArgs)">
+ <summary>
+ when the form loads the textbox and output label arrays are created and the employee 1 label is bolded
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:ASasitharan_Lab3.frmAverageUnitsShipped.btnEnter_Click(System.Object,System.EventArgs)">
+ <summary>
+ The enter button that validates and enters the users input as well as calculates the employee and total average
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:ASasitharan_Lab3.frmAverageUnitsShipped.btnReset_Click(System.Object,System.EventArgs)">
+ <summary>
+ The reset button resets the form to its defualt state by clearing textboxes and labels
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+</members>
+</doc>
