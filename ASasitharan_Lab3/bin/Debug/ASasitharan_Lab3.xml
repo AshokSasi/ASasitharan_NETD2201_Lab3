@@ -43,6 +43,12 @@ ASasitharan_Lab3
  <param name="sender"></param>
  <param name="e"></param>
 </member>
+<member name="M:ASasitharan_Lab3.frmAverageUnitsShipped.ClearControls(System.Windows.Forms.Control[])">
+ <summary>
+ this function clears the textboxes and labels when it is called
+ </summary>
+ <param name="controlArray"></param>
+</member>
 <member name="M:ASasitharan_Lab3.frmAverageUnitsShipped.btnReset_Click(System.Object,System.EventArgs)">
  <summary>
  The reset button resets the form to its defualt state by clearing textboxes and labels

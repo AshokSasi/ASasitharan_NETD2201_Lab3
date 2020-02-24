@@ -1,7 +1,7 @@
 ﻿'Name: Ashok Sasitharan 100745484
-'Date: Feb 20 2020
+'Original Date: Feb 20 2020
 'Description: This program takes in integers that represents shipped units for 3 employees 
-'for 7 days and calculates the average for each employee and the overall total average.
+'for 7 days and calculates the average for each employee and the overall total average. The form can also be reset back to its defualt state.
 
 Option Strict On
 Public Class frmAverageUnitsShipped
@@ -157,6 +157,57 @@ Public Class frmAverageUnitsShipped
             txtUnitsInput.Focus()
         End If
 
+    End Sub
+
+
+    ''' <summary>
+    ''' this function clears the textboxes and labels when it is called
+    ''' </summary>
+    ''' <param name="controlArray"></param>
+    Sub ClearControls(controlArray As Control())
+
+        ' run through an array and set its text to empty when called
+        For Each controlToClear As Control In controlArray
+            controlToClear.Text = String.Empty
+        Next
+
+    End Sub
+
+    ''' <summary>
+    ''' This function sets all of the textboxes and output labels to empty and enables the calculate button along with the textboxes
+    ''' </summary>
+    Sub SetDefaults()
+
+        ' Clear input and output fields
+        'clears all textboxes
+        ClearControls(textboxArray)
+        'clears all output labels
+        ClearControls(outputLabelArray)
+        'clears overall average label
+        lblTotalAverage.Text = String.Empty
+        'set daycount to zero
+        dayCount = 0
+        'set employee number back to 0
+        employeeNum = 0
+        'output the day text
+        lblDay.Text = "Day " & (dayCount + 1)
+        'reset the averages back to 0
+        totalAverage = 0
+        averageUnits = 0
+        'enable the input textbox
+        txtUnitsInput.Enabled = True
+        'enable the enter button
+        btnEnter.Enabled = True
+
+        'set the employee 1 label to bold
+        lblEmployee1.Font = New Font(lblEmployee1.Font, FontStyle.Bold)
+        'unbold employee 2 label
+        lblEmployee2.Font = New Font(lblEmployee2.Font, FontStyle.Regular)
+        'unbold employee 3 label
+        lblEmployee3.Font = New Font(lblEmployee3.Font, FontStyle.Regular)
+
+        'set focus on first input textbox
+        txtUnitsInput.Focus()
 
 
     End Sub
@@ -167,41 +218,8 @@ Public Class frmAverageUnitsShipped
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-
-
-        'set all of the average output labels to empty
-        lblEmployee1Average.Text = String.Empty
-        lblEmployee2Average.Text = String.Empty
-        lblEmployee3Average.Text = String.Empty
-        lblTotalAverage.Text = String.Empty
-
-
-        'reset variables to have default values
-        dayCount = 0
-        employeeNum = 0
-        lblDay.Text = "Day " & (dayCount + 1)
-        totalAverage = 0
-        averageUnits = 0
-
-        'clear all of the textboxes
-        txtUnitsInput.Clear()
-        txtUnitDisplay1.Clear()
-        txtUnitDisplay2.Clear()
-        txtUnitDisplay3.Clear()
-
-
-        ' set unit input textbox to enabled
-        txtUnitsInput.Enabled = True
-        'set enter button to enabled
-        btnEnter.Enabled = True
-        'set the employee 1 label to bold
-        lblEmployee1.Font = New Font(lblEmployee1.Font, FontStyle.Bold)
-        'unbold employee 2 label
-        lblEmployee2.Font = New Font(lblEmployee2.Font, FontStyle.Regular)
-        'unbold employee 3 label
-        lblEmployee3.Font = New Font(lblEmployee3.Font, FontStyle.Regular)
-        ' Set focus to unit input textbox
-        txtUnitsInput.Focus()
+        'call the set defualts function
+        SetDefaults()
 
     End Sub
 End Class
