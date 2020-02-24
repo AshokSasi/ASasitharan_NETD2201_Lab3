@@ -73,11 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AverageUnitsShipped.vb">
+    <Compile Include="AverageUnitsShippedByEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AverageUnitsShipped.Designer.vb">
-      <DependentUpon>AverageUnitsShipped.vb</DependentUpon>
+    <Compile Include="AverageUnitsShippedByEmployee.Designer.vb">
+      <DependentUpon>AverageUnitsShippedByEmployee.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -97,8 +97,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AverageUnitsShipped.resx">
-      <DependentUpon>AverageUnitsShipped.vb</DependentUpon>
+    <EmbeddedResource Include="AverageUnitsShippedByEmployee.resx">
+      <DependentUpon>AverageUnitsShippedByEmployee.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
