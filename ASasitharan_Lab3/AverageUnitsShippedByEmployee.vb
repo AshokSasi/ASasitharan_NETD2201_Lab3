@@ -7,7 +7,7 @@ Option Strict On
 Public Class frmAverageUnitsShipped
     'Global Variables
     Dim dayCount As Integer = 0
-    Dim employeeNum As Integer = 0
+    Dim employeeNumber As Integer = 0
     Dim unitsArray(2, 6) As Integer
     Dim totalAverage As Double = 0
     Dim textboxArray() As TextBox
@@ -34,7 +34,7 @@ Public Class frmAverageUnitsShipped
     ''' <param name="e"></param>
     Private Sub frmAverageUnitsShipped_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'textbox array
-        textboxArray = {txtUnitDisplay1, txtUnitDisplay2, txtUnitDisplay3}
+        textboxArray = {txtOutputDisplay1, txtOutputDisplay2, txtOutputDisplay3}
         'output label array
         outputLabelArray = {lblEmployee1Average, lblEmployee2Average, lblEmployee3Average}
         'set the employee 1 label to bold
@@ -48,7 +48,7 @@ Public Class frmAverageUnitsShipped
     ''' <param name="e"></param>
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
         'run if current employee is 2
-        If employeeNum + 1 = 2 Then
+        If employeeNumber + 1 = 2 Then
             'set employee 2 label to bold
             lblEmployee2.Font = New Font(lblEmployee2.Font, FontStyle.Bold)
             'unbold employee 1 label
@@ -57,7 +57,7 @@ Public Class frmAverageUnitsShipped
             lblEmployee3.Font = New Font(lblEmployee3.Font, FontStyle.Regular)
 
             'run if current employee is 3
-        ElseIf employeeNum + 1 = 3 Then
+        ElseIf employeeNumber + 1 = 3 Then
             'set employee 3 label to bold
             lblEmployee3.Font = New Font(lblEmployee3.Font, FontStyle.Bold)
             'unbold employee label 2
@@ -67,11 +67,11 @@ Public Class frmAverageUnitsShipped
         End If
 
         'run if input is an integer
-        If Integer.TryParse(txtUnitsInput.Text, unitsArray(employeeNum, dayCount)) Then
+        If Integer.TryParse(txtUnitsInput.Text, unitsArray(employeeNumber, dayCount)) Then
             'run if the inputted number is greater than or equal to  0 and less than or equal to 5000
-            If unitsArray(employeeNum, dayCount) >= 0 And unitsArray(employeeNum, dayCount) <= 5000 Then
+            If unitsArray(employeeNumber, dayCount) >= 0 And unitsArray(employeeNumber, dayCount) <= 5000 Then
                 ' Output the new temperature value
-                textboxArray(employeeNum).Text &= unitsArray(employeeNum, dayCount) & vbCrLf
+                textboxArray(employeeNumber).Text &= unitsArray(employeeNumber, dayCount) & vbCrLf
                 'increment day by one
                 dayCount += 1
                 'output the current day in label
@@ -86,16 +86,16 @@ Public Class frmAverageUnitsShipped
                     'for loop that loops through the array for the current employee
                     For count As Integer = 0 To maxDays - 1
                         'add the number to total units
-                        totalUnits += unitsArray(employeeNum, count)
+                        totalUnits += unitsArray(employeeNumber, count)
                     Next
 
                     'calculate the average for the emplyee
                     averageUnits = Math.Round(totalUnits / maxDays, 2)
                     'display the employees average in textbox. To string shows trailing zeros
-                    outputLabelArray(employeeNum).Text = "Average: " & averageUnits.ToString("0.00")
+                    outputLabelArray(employeeNumber).Text = "Average: " & averageUnits.ToString("0.00")
 
                     ' Increment the employee number up by 1
-                    employeeNum += 1
+                    employeeNumber += 1
 
                     ' Reset the day counter to 0
                     dayCount = 0
@@ -103,7 +103,7 @@ Public Class frmAverageUnitsShipped
                     lblDay.Text = "Day " & (dayCount + 1)
 
                     'run if the employee number is 3
-                    If employeeNum = totalEmployees Then
+                    If employeeNumber = totalEmployees Then
                         'set total units to 0
                         totalUnits = 0
 
@@ -188,7 +188,7 @@ Public Class frmAverageUnitsShipped
         'set daycount to zero
         dayCount = 0
         'set employee number back to 0
-        employeeNum = 0
+        employeeNumber = 0
         'output the day text
         lblDay.Text = "Day " & (dayCount + 1)
         'reset the averages back to 0
